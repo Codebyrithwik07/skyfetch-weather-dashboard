@@ -8,13 +8,16 @@
 </head>
 <body>
     <div class="container">
-        <h1>🌤️ SkyFetch</h1>
-        <p class="tagline">Your Personal Weather Dashboard</p>
+    <h1>SkyFetch 🌍</h1>
+
+    <div class="search-section">
+        <input type="text" id="city-input" placeholder="Enter city name...">
         
-        <div id="weather-display">
-            <p class="loading">Loading weather data...</p>
-        </div>
+        <button id="search-btn">🔍 Search</button>
     </div>
+
+    <div id="weather-display"></div>
+</div>
 
     <!-- Axios CDN -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
