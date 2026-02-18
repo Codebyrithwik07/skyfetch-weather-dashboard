@@ -20,7 +20,7 @@ body {
     border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     text-align: center;
-    max-width: 500px;
+    max-width: 800px; /* Increased to accommodate forecast grid */
     width: 100%;
 }
 
@@ -85,7 +85,6 @@ h1 {
     height: 100px;
 }
 
-/* Container for the input and button */
 .search-section {
     margin-bottom: 30px;
     display: flex;
@@ -95,23 +94,20 @@ h1 {
     margin-right: auto;
 }
 
-/* The input field */
 #city-input {
     padding: 12px 20px;
     border-radius: 25px;
     border: 2px solid #ddd;
-    flex: 1; /* Takes up remaining space */
+    flex: 1;
     font-size: 1rem;
     outline: none;
     transition: border-color 0.3s ease;
 }
 
-/* Change border color when clicking into the input */
 #city-input:focus {
-    border-color: #007bff; /* Match this to your theme color */
+    border-color: #007bff;
 }
 
-/* The search button */
 #search-btn {
     padding: 12px 25px;
     background: linear-gradient(135deg, #007bff, #0056b3);
@@ -126,23 +122,21 @@ h1 {
     justify-content: center;
 }
 
-/* Hover effect for the button */
 #search-btn:hover {
     opacity: 0.9;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Active state for a "clicked" feel */
 #search-btn:active {
     transform: translateY(0);
 }
-/* Spinner Animation */
+
 .spinner {
     width: 50px;
     height: 50px;
     border: 5px solid #f3f3f3;
-    border-top: 5px solid #667eea; /* Match your theme color */
+    border-top: 5px solid #667eea;
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin: 20px auto;
@@ -153,7 +147,6 @@ h1 {
     to { transform: rotate(360deg); }
 }
 
-/* Error Styling */
 .error-message {
     background-color: #fee2e2;
     color: #b91c1c;
@@ -166,4 +159,87 @@ h1 {
 .loading-container {
     text-align: center;
     color: #666;
+}
+
+/* Forecast Section Styles */
+.forecast-section {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 2px solid #eee;
+}
+
+.forecast-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Forecast Grid Layout */
+.forecast-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Forecast Card Styling */
+.forecast-card {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.forecast-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.forecast-day {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.forecast-card img {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+}
+
+.forecast-temp {
+    font-size: 1.5rem;
+    color: #667eea;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.forecast-desc {
+    font-size: 0.85rem;
+    color: #666;
+    text-transform: capitalize;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .forecast-container {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+    }
+
+    .forecast-card {
+        padding: 10px;
+    }
+
+    .temperature {
+        font-size: 2.5rem;
+    }
+
+    .forecast-temp {
+        font-size: 1.2rem;
+    }
 }
